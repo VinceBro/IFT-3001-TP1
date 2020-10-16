@@ -40,7 +40,7 @@ Polynome plus_grand_commun_diviseur(const Polynome& a, const Polynome& b) {
   // implémenter le tour de passe passe pour améliorer l'éxécution? -> m mod n
   Polynome qx, rx, ax(a), bx(b);
 
-  while (bx.degre() > 0) {
+  while (bx.degre() >= 0) {
     division(ax, bx, qx, rx);
     ax = Polynome(bx);
     bx = Polynome(rx);
