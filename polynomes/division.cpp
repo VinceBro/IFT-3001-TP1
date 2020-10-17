@@ -8,27 +8,23 @@ void division(const Polynome& dividende, // Le polynome qui est divise
 	      Polynome& reste) {	   // Parametre de sortie: le reste de la division
   assert(diviseur.degre() > 0 || diviseur.coefficient(0).numerateur() != 0); // Pas de division par zero
 
-  Polynome reste_courant, dividende_intermediaire, terme_courant;
+  Polynome terme_courant;
   Polynome dividende_courant(dividende);
   Rationnel coefficient_terme_courant;
   int degre_diviseur = diviseur.degre();
   int degre_dividende_courant = dividende_courant.degre();
 
   while (degre_dividende_courant >= degre_diviseur) {
-
       coefficient_terme_courant = dividende_courant.coefficient(degre_dividende_courant) / diviseur.coefficient(degre_diviseur);
       Polynome terme_courant(coefficient_terme_courant, degre_dividende_courant - degre_diviseur);
 
-      dividende_intermediaire = terme_courant * diviseur;
-      reste_courant = dividende_courant - dividende_intermediaire;
-      dividende_courant = reste_courant;
-
-      degre_dividende_courant = dividende_courant.degre();
-
       quotient = quotient + terme_courant;
+
+      dividende_courant = dividende_courant - diviseur.multiplication_par_monome(coefficient_terme_courant, degre_dividende_courant - degre_diviseur);
+      degre_dividende_courant = dividende_courant.degre();
   }
 
-  reste = Polynome(reste_courant);
+  reste = Polynome(dividende_courant);
 }
 
 Polynome plus_grand_commun_diviseur(const Polynome& a, const Polynome& b) {

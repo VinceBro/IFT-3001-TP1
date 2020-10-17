@@ -181,6 +181,20 @@ int main(void) {
   // Un autre germe sera utilise lors de la correction
   // Aucun polynome de degre superieur a 4 ne sera teste, car il y a un risque de depassement d'entier.
   test_statistique(4, 1000, 321, test_generique_plus_grand_commun_diviseur);
+
+  Polynome ax, bx, qx, rx;
+
+  ax = Polynome(Rationnel(1, 1), 6);// + Polynome(Rationnel(5, 1), 5) + Polynome(Rationnel(4, 1), 4) + Polynome(Rationnel(3, 1), 3) + Polynome(Rationnel(2, 1), 2) + Polynome(Rationnel(2, 1), 0) + Polynome(Rationnel(2, 1), 1);
+  bx = Polynome(Rationnel(1, 1), 5);//+ Polynome(Rationnel(3, 1), 4) + Polynome(Rationnel(4, 1), 3);
+
+  std::cout << "ax : " << ax << std::endl;
+  std::cout << "bx : " << bx << std::endl;
+
+  division(ax, bx, qx, rx);
+
+  std::cout << "qx : " << qx << std::endl;
+  std::cout << "rx : " << rx << std::endl;
+  std::cout << "pgcd : " << plus_grand_commun_diviseur(ax, bx) << std::endl;
   
   return 0;
 }
