@@ -184,8 +184,8 @@ int main(void) {
 
   Polynome ax, bx, qx, rx;
 
-  ax = Polynome(Rationnel(1, 1), 6);// + Polynome(Rationnel(5, 1), 5) + Polynome(Rationnel(4, 1), 4) + Polynome(Rationnel(3, 1), 3) + Polynome(Rationnel(2, 1), 2) + Polynome(Rationnel(2, 1), 0) + Polynome(Rationnel(2, 1), 1);
-  bx = Polynome(Rationnel(1, 1), 5);//+ Polynome(Rationnel(3, 1), 4) + Polynome(Rationnel(4, 1), 3);
+  ax = Polynome(Rationnel(1, 1),6);
+  bx = Polynome(Rationnel(1, 1), 1) + Polynome(Rationnel(1, 1), 0);
 
   std::cout << "ax : " << ax << std::endl;
   std::cout << "bx : " << bx << std::endl;

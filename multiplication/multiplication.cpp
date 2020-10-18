@@ -47,7 +47,6 @@ GrandEntier GrandEntier::operator*(const GrandEntier& grand_entier) const {
 
   GrandEntier a_inferieur(a_inferieur_vect), a_superieur(a_superieur_vect), b_inferieur(b_inferieur_vect), b_superieur(b_superieur_vect);
 
-
   GrandEntier a_superieur_b_superieur = a_superieur * b_superieur;
   GrandEntier a_inferieur_b_inferieur = a_inferieur * b_inferieur;
   GrandEntier somme_inferieur_superieur = ((a_superieur + a_inferieur) * (b_superieur + b_inferieur)) - a_superieur_b_superieur - a_inferieur_b_inferieur;
